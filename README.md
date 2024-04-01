@@ -1,30 +1,65 @@
-# React + TypeScript + Vite
+# NFT Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a decentralized marketplace for trading non-fungible tokens (NFTs), built using Solidity for smart contracts, Hardhat for development, React with TypeScript for the frontend, Tailwind CSS for styling, and Ethers.js for integrating with Ethereum.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Traditional Setup
 
-## Expanding the ESLint configuration
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/prithvikr66/ERC-721-Market-Place.git
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. Navigate to the project directory:
+   ```bash
+   cd ERC-721-Market-Place
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+4. Rename `.env.example` to `.env` and fill in the required environment variables.
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+6. Open your browser and navigate to `http://localhost:5173` to view the application.
+
+### Docker Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/prithvikr66/ERC-721-Market-Place.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd ERC-721-Market-Place
+   ```
+
+3. Build the Docker image:
+   ```bash
+   docker build -t nft-marketplace .
+   ```
+
+4. Run the Docker container:
+   ```bash
+   docker run -p 5173:5173 --network host nft-marketplace
+   ```
+
+5. Open your browser and navigate to `http://localhost:5173` to view the application.
+
+## Environment Variables
+
+This project uses environment variables for configuration. Copy the `.example.env` file to `.env` and fill in the required variables.
+
+```
+VITE_API_PINATA_JWT_KEY ="Your_Pinata_API_Key_Here"
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Replace `Your_Pinata_API_Key_Here` with your actual Pinata API key in the clone URLs provided. Additionally, customize the environment variables according to your project's requirements.
